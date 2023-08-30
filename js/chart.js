@@ -5,9 +5,9 @@ $(function() {
    */
   'use strict';
   var data = {
-    labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
+    labels: ["Jan1", "Jan2", "Jan3", "Jan4", "Jan5", "Jan6"],
     datasets: [{
-      label: '# of Votes',
+      label: 'Item Count',
       data: [10, 19, 3, 5, 2, 3],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
@@ -114,7 +114,7 @@ $(function() {
     }
   };
   var areaData = {
-    labels: ["2013", "2014", "2015", "2016", "2017"],
+    labels: ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"],
     datasets: [{
       label: '# of Votes',
       data: [12, 19, 3, 5, 2, 3],
@@ -268,12 +268,23 @@ $(function() {
     }
   }
   // Get context with jQuery - using jQuery's .get() method.
-  if ($("#barChart").length) {
-    var barChartCanvas = $("#barChart").get(0).getContext("2d");
+  if ($("#totalSalesChart").length) {
+    var barChartCanvas = $("#totalSalesChart").get(0).getContext("2d");
     // This will get the first returned node in the jQuery collection.
     var barChart = new Chart(barChartCanvas, {
       type: 'bar',
       data: data,
+      options: options
+    });
+  }
+
+
+  if ($("#topProductChart").length) {
+    var barChartCanvas = $("#topProductChart").get(0).getContext("2d");
+    // This will get the first returned node in the jQuery collection.
+    var barChart = new Chart(barChartCanvas, {
+      type: 'bar',
+      data: areaData,
       options: options
     });
   }
